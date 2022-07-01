@@ -1,0 +1,43 @@
+# Change to your needs
+
+# uncomment if you get no picture on HDMI for a default "safe" mode
+#hdmi_safe=1
+
+disable_overscan=1
+
+# uncomment to force a specific HDMI mode (this will force VGA)
+#hdmi_group=1
+#hdmi_mode=1
+
+# Sound output. Set to 0 or comment for autodetect, 1 for DVI, 2 to force HDMI.
+#hdmi_drive=2
+
+config_hdmi_boost=0
+
+# uncomment for composite PAL
+#sdtv_mode=2
+
+# uncomment for lirc-rpi
+#dtoverlay=lirc-rpi
+
+# uncomment if you have chinese TV display and display is garbled or slow
+#hdmi_ignore_edid=0xa5000080
+
+[all]
+dtoverlay=gpio-fan,gpiopin=14,temp=70000
+
+arm_boost=1
+
+# RPI4 3.5MM COMPOSITE OUTPUT SETTINGS:
+enable_tvout=1
+sdtv_mode=0
+sdtv_aspect=1
+hdmi_ignore_hotplug=1
+hdmi_force_hotplug=0
+boot_delay=0
+disable_fw_kms_setup=1
+dtoverlay=vc4-fkms-v3d
+overscan_scale=0
+audio_pwm_mode=2
+##framebuffer_width=580
+##framebuffer_height=360
