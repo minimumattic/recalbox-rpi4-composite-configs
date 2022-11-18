@@ -1,3 +1,6 @@
+Raspberry Pi 4 - 3.5mm AV Composite output settings for CRT monitors for Recalbox OS 8.x.x
+====================================================================================
+
 sdtv_mode=
 ---------------
 0 Normal NTSC
