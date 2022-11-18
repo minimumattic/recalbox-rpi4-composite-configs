@@ -9,7 +9,7 @@ dtparam=audio=on
 
 # if you plug your tv at the same time as your rpi and that the rpi switches from the hdmi or
 # give a low resolution because tv had no enough time to initialize it
-boot_delay=3
+##boot_delay=3
 
 # disable boot rainbow
 disable_splash=0
@@ -23,7 +23,7 @@ kernel=boot/linux
 initramfs boot/initrd.gz
 
 # force hdmi while the tv can take time before sending the signal on the hdmi output
-##hdmi_force_hotplug=1
+hdmi_force_hotplug=1
 
 # total amount of GPU memory
 gpu_mem_256=128
@@ -40,10 +40,11 @@ include recalbox-oc-config.txt
 # Raise the first security limit up to 70° instead of 60° for pi3 and pi4
 [pi3]
 temp_soft_limit=70
-##dtoverlay=vc4-kms-v3d
+dtoverlay=vc4-kms-v3d
 include crt/recalbox-crt-config.txt
 
 [pi4]
+arm_64bit=1
 temp_soft_limit=70
 ##dtoverlay=vc4-kms-v3d
 include crt/recalbox-crt-config.txt
@@ -53,7 +54,8 @@ hdmi_pixel_freq_limit:0=200000000
 hdmi_pixel_freq_limit:1=200000000
 
 [board-type=0x12]
-##dtoverlay=vc4-kms-v3d
+dtoverlay=vc4-kms-v3d
+include crt/recalbox-crt-config.txt
 
 # custom config
 [all]

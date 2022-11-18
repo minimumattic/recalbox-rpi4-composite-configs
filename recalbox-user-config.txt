@@ -24,20 +24,15 @@ config_hdmi_boost=0
 #hdmi_ignore_edid=0xa5000080
 
 [all]
-dtoverlay=gpio-fan,gpiopin=14,temp=70000
+dtoverlay=gpio-fan,gpiopin=14,temp=70000   #spin the fan when it reaches 70C temp
 
-arm_boost=1
+arm_boost=1  #increase CPU from 1.5 to 1.8Ghz
 
 # RPI4 3.5MM COMPOSITE OUTPUT SETTINGS:
-enable_tvout=1
-sdtv_mode=0
-sdtv_aspect=1
-hdmi_ignore_hotplug=1
-hdmi_force_hotplug=0
-boot_delay=0
-disable_fw_kms_setup=1
-dtoverlay=vc4-fkms-v3d
+enable_tvout=1  #enable rpi's 3.5mm AV output
+sdtv_mode=0  #select NTSC or PAL for your region
+sdtv_aspect=1  #aspect ratio
+dtoverlay=vc4-kms-v3d-pi4,composite=1
 overscan_scale=0
 audio_pwm_mode=2
-##framebuffer_width=580
-##framebuffer_height=360
+boot_delay=0
