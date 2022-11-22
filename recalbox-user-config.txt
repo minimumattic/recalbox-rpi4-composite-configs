@@ -23,16 +23,16 @@ config_hdmi_boost=0
 # uncomment if you have chinese TV display and display is garbled or slow
 #hdmi_ignore_edid=0xa5000080
 
-[all]
-dtoverlay=gpio-fan,gpiopin=14,temp=70000   #spin the fan when it reaches 70C temp
-
-arm_boost=1  #increase CPU from 1.5 to 1.8Ghz
-
-# RPI4 3.5MM COMPOSITE OUTPUT SETTINGS:
-enable_tvout=1  #enable rpi's 3.5mm AV output
-sdtv_mode=0  #select NTSC or PAL for your region
-sdtv_aspect=1  #aspect ratio
+[pi4]
 dtoverlay=vc4-kms-v3d-pi4,composite=1
+
+[all]
+dtoverlay=gpio-fan,gpiopin=14,temp=70000
+arm_boost=1
+enable_tvout=1
+sdtv_mode=16
+sdtv_aspect=1
+boot_delay=0
 overscan_scale=0
 audio_pwm_mode=2
-boot_delay=0
+enable_uart=1
